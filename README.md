@@ -1,16 +1,32 @@
-# hana_handmade
+## 環境構築
+https://github.com/leoafarias/fvm を参考
 
-HANA -handmade
+- dart install
+```shell script
+brew tap dart-lang/dart
+brew install dart
+```
 
-## Getting Started
+- fvm install
+```shell script
+pub global activate fvm
+```
 
-This project is a starting point for a Flutter application.
+- PATHを.bashrc, .bash_profileなどに追加
+```shell script
+export PATH="$PATH":"$HOME/.pub-cache/bin"
+```
 
-A few resources to get you started if this is your first Flutter project:
+- flutter install
+```shell script
+fvm install
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- flutter sdk pathをandroid studioに設定する
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Copy the **_absolute_** path of fvm symbolic link in your root project directory. Example: `/absolute/path-to-your-project/.fvm/flutter_sdk`
+
+In the Android Studio menu open `Languages & Frameworks -> Flutter` or search for Flutter and change Flutter SDK path. Apply the changes. You now can Run and Debug with the selected versions of Flutter.
+Restart Android Studio to see the new settings applied.
+
+[Add your IDE instructions here](https://github.com/leoafarias/fvm/issues)
