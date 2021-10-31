@@ -41,6 +41,8 @@ app.*.symbols
 app.*.map.json
 .metadata
 
+.fvm/flutter_sdk
+
 # Android Studio will place build artifacts here
 /android/app/debug
 /android/app/profile
