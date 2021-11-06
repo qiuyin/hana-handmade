@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 import 'common/colors.dart' as colors;
 
 void main() {
@@ -45,7 +46,8 @@ class MyHomePage extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Icon(Icons.search),
+                    SvgPicture.asset('images/search.svg',
+                        semanticsLabel: 'search'),
                     SizedBox(
                       width: 8,
                     ),
