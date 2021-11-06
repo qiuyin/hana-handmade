@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'common/colors.dart' as colors;
+
 void main() {
   runApp(MyApp());
 }
@@ -9,31 +11,51 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      appBar: _appBar(),
       body: Center(),
     );
+  }
+
+  PreferredSizeWidget _appBar() {
+    return PreferredSize(
+        preferredSize: Size.fromHeight(60),
+        child: Material(
+          color: colors.hanaPink,
+          elevation: 1,
+          child: Stack(
+            children: [
+              Center(child: Text("Hana Logo")),
+              Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Icon(Icons.search),
+                    SizedBox(
+                      width: 8,
+                    ),
+                    Icon(Icons.shopping_cart),
+                    SizedBox(
+                      width: 18,
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+        ));
   }
 }
