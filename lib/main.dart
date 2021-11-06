@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-
+import 'package:flutter_svg/flutter_svg.dart';
 import 'common/colors.dart' as colors;
 
 void main() {
@@ -50,7 +49,7 @@ class MyHomePage extends StatelessWidget {
                     SizedBox(
                       width: 8,
                     ),
-                    Icon(Icons.shopping_cart),
+                    SvgPicture.asset('images/cart.svg', semanticsLabel: 'Cart'),
                     SizedBox(
                       width: 18,
                     )
