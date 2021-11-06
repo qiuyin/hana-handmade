@@ -39,7 +39,9 @@ class MyHomePage extends StatelessWidget {
           elevation: 1,
           child: Stack(
             children: [
-              Center(child: Text("Hana Logo")),
+              Center(
+                  child: SvgPicture.asset('images/logo.svg',
+                      semanticsLabel: 'Hana Logo')),
               Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -49,7 +51,7 @@ class MyHomePage extends StatelessWidget {
                     SizedBox(
                       width: 8,
                     ),
-                    Icon(Icons.shopping_cart),
+                    SvgPicture.asset('images/cart.svg', semanticsLabel: 'Cart'),
                     SizedBox(
                       width: 18,
                     )
