@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import 'common/colors.dart' as colors;
 
 void main() {
@@ -39,7 +38,9 @@ class MyHomePage extends StatelessWidget {
           elevation: 1,
           child: Stack(
             children: [
-              Center(child: Text("Hana Logo")),
+              Center(
+                  child: SvgPicture.asset('images/logo.svg',
+                      semanticsLabel: 'Hana Logo')),
               Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
