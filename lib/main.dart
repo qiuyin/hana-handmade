@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
-import 'common/colors.dart' as colors;
+import 'package:hana_handmade/views/pages/top_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,49 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: TopPage(),
     );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: _appBar(),
-      body: Center(),
-    );
-  }
-
-  PreferredSizeWidget _appBar() {
-    return PreferredSize(
-        preferredSize: Size.fromHeight(60),
-        child: Material(
-          color: colors.hanaPink,
-          elevation: 1,
-          child: Stack(
-            children: [
-              Center(
-                  child: SvgPicture.asset('images/logo.svg',
-                      semanticsLabel: 'Hana Logo')),
-              Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    SvgPicture.asset('images/search.svg',
-                        semanticsLabel: 'search'),
-                    SizedBox(
-                      width: 8,
-                    ),
-                    SvgPicture.asset('images/cart.svg', semanticsLabel: 'Cart'),
-                    SizedBox(
-                      width: 18,
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
-        ));
   }
 }
