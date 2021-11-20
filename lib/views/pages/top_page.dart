@@ -3,13 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hana_handmade/common/colors.dart' as colors;
 import 'package:hana_handmade/views/molecules/story_slide.dart';
 
-class TopPage extends StatefulWidget {
-  @override
-  _TopPageState createState() => _TopPageState();
-}
-
-class _TopPageState extends State<TopPage> {
-  @override
+class TopPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _appBar(),
