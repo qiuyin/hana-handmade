@@ -66,7 +66,6 @@ class TopPage extends StatelessWidget {
                 style: TextStyle(
                     fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
               ),
-              SizedBox(height: 10),
               const Expanded(
                 child: Divider(
                   thickness: 0.3,
