@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hana_handmade/common/colors.dart' as colors;
+import 'package:hana_handmade/views/molecules/story_slide.dart';
 import 'package:hana_handmade/views/organisms/hana_app_bar.dart';
 
 class TopPage extends StatelessWidget {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: HanaAppBar(),
@@ -22,25 +22,27 @@ class TopPage extends StatelessWidget {
     );
 
     return Center(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text('画像'),
-          Row(
-            children: [
-              divider,
-              SelectableText(
-                '新商品',
-                strutStyle: StrutStyle(height: 1.5),
-                style: TextStyle(
-                    fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
-              ),
-              divider,
-            ],
-          ),
-          Text('新商品画像リスト'),
-          Text('カテゴリ'),
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            StorySlide(),
+            Row(
+              children: [
+                divider,
+                SelectableText(
+                  '新商品',
+                  strutStyle: StrutStyle(height: 1.5),
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
+                ),
+                divider,
+              ],
+            ),
+            Text('新商品画像リスト'),
+            Text('カテゴリ'),
+          ],
+        ),
       ),
     );
   }
