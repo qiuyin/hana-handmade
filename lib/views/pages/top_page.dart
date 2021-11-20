@@ -45,6 +45,15 @@ class TopPage extends StatelessWidget {
   }
 
   Widget _body(BuildContext context) {
+    const divider = const Expanded(
+      child: Divider(
+        thickness: 0.3,
+        color: colors.darkGray,
+        indent: 24,
+        endIndent: 24,
+      ),
+    );
+
     return Center(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -52,28 +61,14 @@ class TopPage extends StatelessWidget {
           Text('画像'),
           Row(
             children: [
-              const Expanded(
-                child: Divider(
-                  thickness: 0.3,
-                  color: colors.darkGray,
-                  indent: 24,
-                  endIndent: 24,
-                ),
-              ),
+              divider,
               SelectableText(
                 '新商品',
                 strutStyle: StrutStyle(height: 1.5),
                 style: TextStyle(
                     fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
               ),
-              const Expanded(
-                child: Divider(
-                  thickness: 0.3,
-                  color: colors.darkGray,
-                  indent: 24,
-                  endIndent: 24,
-                ),
-              ),
+              divider,
             ],
           ),
           Text('新商品画像リスト'),
