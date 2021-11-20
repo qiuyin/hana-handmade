@@ -1,24 +1,19 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-class StorySlide extends StatefulWidget {
-  @override
-  _StorySlideState createState() => _StorySlideState();
-}
-
-class _StorySlideState extends State<StorySlide> {
+class StorySlide extends StatelessWidget {
   final CarouselController _controller = CarouselController();
 
   @override
   Widget build(BuildContext context) {
-    final List<String> imgList = [
+    final imgList = [
       'images/product_list/slide3.png',
       'images/product_list/slide1.jpeg',
       'images/product_list/slide2.webp',
     ];
-    final List<Widget> imageSliders = imgList
-        .map((item) => Image.asset(
-              item,
+    final imageSliders = imgList
+        .map((image) => Image.asset(
+              image,
               fit: BoxFit.contain,
             ))
         .toList();
@@ -31,7 +26,7 @@ class _StorySlideState extends State<StorySlide> {
         options: CarouselOptions(
           height: MediaQuery.of(context).size.height - 60,
           autoPlay: true,
-          enlargeCenterPage: false,
+          enlargeCenterPage: true,
           viewportFraction: 1,
         ),
       ),
