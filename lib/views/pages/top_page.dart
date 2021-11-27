@@ -1,3 +1,6 @@
+import 'package:carousel_slider/carousel_controller.dart';
+import 'package:carousel_slider/carousel_options.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:hana_handmade/common/colors.dart' as colors;
 import 'package:hana_handmade/views/molecules/story_slide.dart';
@@ -21,12 +24,16 @@ class TopPage extends StatelessWidget {
       ),
     );
 
+    ScrollController _controller = new ScrollController();
     return Center(
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             StorySlide(),
+            SizedBox(
+              height: 20,
+            ),
             Row(
               children: [
                 divider,
@@ -39,11 +46,77 @@ class TopPage extends StatelessWidget {
                 divider,
               ],
             ),
-            Text('新商品画像リスト'),
+            SizedBox(
+              height: 10,
+            ),
+            NewItemsContainer(),
             Text('カテゴリ'),
           ],
         ),
       ),
+    );
+  }
+}
+
+class ItemSlide extends StatelessWidget {
+  ItemSlide(this._controller);
+
+  CarouselController _controller;
+
+  @override
+  Widget build(BuildContext context) {
+    final itemList = [
+      'images/newitem_list/1.jpg',
+      'images/newitem_list/2.jpg',
+      'images/newitem_list/3.jpg',
+      'images/newitem_list/4.jpg',
+      'images/newitem_list/5.jpg',
+    ];
+    final itemSliders = itemList
+        .map((image) => Padding(
+              padding: const EdgeInsets.all(13.0),
+              child: Image.asset(
+                image,
+                fit: BoxFit.contain,
+              ),
+            ))
+        .toList();
+    return SizedBox(
+      height: 400,
+      child: CarouselSlider(
+        items: itemSliders,
+        carouselController: _controller,
+        options: CarouselOptions(
+          height: 400,
+          autoPlay: false,
+          enlargeCenterPage: false,
+          viewportFraction: 0.33,
+        ),
+      ),
+    );
+  }
+}
+
+class NewItemsContainer extends StatelessWidget {
+  final CarouselController _controller = CarouselController();
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        IconButton(
+          onPressed: () => _controller.previousPage(),
+          icon: Icon(
+            Icons.arrow_left,
+          ),
+        ),
+        Flexible(child: ItemSlide(_controller)),
+        IconButton(
+          onPressed: () => _controller.nextPage(),
+          icon: Icon(
+            Icons.arrow_right,
+          ),
+        ),
+      ],
     );
   }
 }
