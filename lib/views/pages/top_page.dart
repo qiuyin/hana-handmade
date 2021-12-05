@@ -6,8 +6,6 @@ import 'package:hana_handmade/views/molecules/story_slide.dart';
 import 'package:hana_handmade/views/organisms/hana_app_bar.dart';
 
 class TopPage extends StatelessWidget {
-  get children => null;
-
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: HanaAppBar(),
@@ -106,13 +104,11 @@ class NewItemsContainer extends StatelessWidget {
         IconButton(
           onPressed: () => _controller.previousPage(),
           icon: const Icon(Icons.arrow_left),
-          tooltip: 'Increase volume by 10',
         ),
         Flexible(child: ItemSlide(_controller)),
         IconButton(
           onPressed: () => _controller.nextPage(),
           icon: const Icon(Icons.arrow_right),
-          tooltip: 'Increase volume by 10',
         ),
       ],
     );
