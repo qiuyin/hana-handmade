@@ -27,7 +27,7 @@ class StorySlide extends StatelessWidget {
           height: MediaQuery.of(context).size.height - 60,
           autoPlay: true,
           autoPlayInterval: const Duration(seconds: 6),
-          autoPlayAnimationDuration: const Duration(milliseconds: 2000),
+          autoPlayAnimationDuration: const Duration(seconds: 2),
           enlargeCenterPage: true,
           viewportFraction: 1,
         ),
