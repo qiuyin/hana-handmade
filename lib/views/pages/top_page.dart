@@ -59,7 +59,7 @@ class TopPage extends StatelessWidget {
 }
 
 class ItemSlide extends StatelessWidget {
-  CarouselController _controller;
+  final CarouselController _controller;
   ItemSlide(this._controller);
 
   @override
