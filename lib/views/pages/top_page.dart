@@ -24,7 +24,6 @@ class TopPage extends StatelessWidget {
       ),
     );
 
-    ScrollController _controller = new ScrollController();
     return Center(
       child: SingleChildScrollView(
         child: Column(
@@ -61,7 +60,7 @@ class TopPage extends StatelessWidget {
 class ItemSlide extends StatelessWidget {
   ItemSlide(this._controller);
 
-  CarouselController _controller;
+  final CarouselController _controller;
 
   @override
   Widget build(BuildContext context) {
