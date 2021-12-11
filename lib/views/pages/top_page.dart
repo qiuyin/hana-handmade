@@ -1,8 +1,10 @@
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hana_handmade/common/colors.dart' as colors;
+import 'package:hana_handmade/common/colors.dart';
 import 'package:hana_handmade/views/molecules/story_slide.dart';
 import 'package:hana_handmade/views/organisms/hana_app_bar.dart';
 
@@ -49,7 +51,58 @@ class TopPage extends StatelessWidget {
               height: 10,
             ),
             NewItemsContainer(),
-            Text('カテゴリ'),
+            Row(
+              children: [
+                divider,
+                SelectableText(
+                  'カテゴリ',
+                  strutStyle: StrutStyle(height: 1.5),
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
+                ),
+                divider,
+              ],
+            ),
+            Container(
+              color: gray,
+              child: ListView.separated(
+                shrinkWrap: true, //追加
+                padding: const EdgeInsets.all(8),
+                itemCount: 3,
+
+                itemBuilder: (BuildContext context, int index) {
+                  if (index % 2 == 0) {
+                    return Container(
+                      height: 300,
+                      padding: const EdgeInsets.all(20),
+                      child: Row(
+                        children: [
+                          Expanded(flex: 2, child: Center(child: Text("abc"))),
+                          Expanded(
+                              flex: 1,
+                              child: Image.asset("images/newitem_list/1.jpg")),
+                        ],
+                      ),
+                    );
+                  } else {
+                    return Container(
+                      height: 300,
+                      padding: const EdgeInsets.all(20),
+                      child: Row(
+                        children: [
+                          Expanded(
+                              flex: 1,
+                              child: Image.asset("images/newitem_list/1.jpg")),
+                          Expanded(flex: 2, child: Center(child: Text("abc"))),
+                        ],
+                      ),
+                    );
+                  }
+                },
+                separatorBuilder: (BuildContext context, int index) =>
+                    const Divider(),
+              ),
+            ),
           ],
         ),
       ),
