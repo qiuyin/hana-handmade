@@ -82,7 +82,7 @@ class TopPage extends StatelessWidget {
                           Expanded(
                             flex: 1,
                             child: Image.asset(
-                              'images/newitem_list/商品1.jpg',
+                              'images/newitem_list/2.jpg',
                             ),
                           ),
                         ]));
@@ -94,7 +94,7 @@ class TopPage extends StatelessWidget {
                           Expanded(
                             flex: 1,
                             child: Image.asset(
-                              'images/newitem_list/商品1.jpg',
+                              'images/newitem_list/1.jpg',
                             ),
                           ),
                           Expanded(
