@@ -71,12 +71,32 @@ class TopPage extends StatelessWidget {
                   if (index.isEven) {
                     return Container(
                         padding: EdgeInsets.all(50),
-                        height: 300,
+                        height: 350,
                         child: Row(children: [
                           Expanded(
                             flex: 2,
                             child: Center(
-                              child: Text('カテゴリー A'),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    'LOOK & FEEL',
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                  Text(
+                                    longString,
+                                    strutStyle: StrutStyle(height: 1.3),
+                                    style: TextStyle(
+                                      fontSize: 13,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                           Expanded(
@@ -179,3 +199,15 @@ class NewItemsContainer extends StatelessWidget {
     );
   }
 }
+
+final longString = '''
+
+
+NATURAL & LIGHTWEIGHT
+Our mink eyelashes are incredibly natural looking, 
+ultra soft and comfortable. 
+Compared to eyelash extensions, our false eyelashes are
+safer, more beautiful, 
+and more convenient. Put any pair 
+on in the morning and take them off at night.
+''';
