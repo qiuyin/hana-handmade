@@ -1,11 +1,13 @@
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hana_handmade/common/colors.dart' as colors;
 import 'package:hana_handmade/common/colors.dart';
 import 'package:hana_handmade/views/molecules/story_slide.dart';
 import 'package:hana_handmade/views/organisms/hana_app_bar.dart';
+import 'package:hana_handmade/views/organisms/hana_app_footer.dart';
 
 class TopPage extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -130,6 +132,7 @@ class TopPage extends StatelessWidget {
                     const Divider(),
               ),
             ),
+            HanaAppFooter(),
           ],
         ),
       ),

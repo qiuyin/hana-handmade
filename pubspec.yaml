@@ -51,6 +51,7 @@ flutter:
     - images/
     - images/product_list/
     - images/newitem_list/
+    - images/SNS_list/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
