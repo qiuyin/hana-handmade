@@ -8,6 +8,7 @@ import 'package:hana_handmade/common/colors.dart';
 import 'package:hana_handmade/views/molecules/story_slide.dart';
 import 'package:hana_handmade/views/organisms/hana_app_bar.dart';
 import 'package:hana_handmade/views/organisms/hana_app_footer.dart';
+import 'package:hana_handmade/views/organisms/hoverable_image.dart';
 
 class TopPage extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -157,10 +158,8 @@ class ItemSlide extends StatelessWidget {
     final itemSliders = itemList
         .map((image) => Padding(
               padding: const EdgeInsets.all(13.0),
-              child: Image.asset(
-                image,
-                fit: BoxFit.contain,
-              ),
+              child: HoverableImage(
+                  imageUrl1: image, imageUrl2: 'images/newitem_list/2.jpg'),
             ))
         .toList();
     return SizedBox(
