@@ -15,6 +15,7 @@ class _HoverableImageState extends State<HoverableImage> {
 
   @override
   void initState() {
+    super.initState();
     image = widget.imageUrl1;
   }
 
