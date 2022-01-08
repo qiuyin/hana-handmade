@@ -192,9 +192,7 @@ class NewItemsContainer extends StatelessWidget {
         ),
         Flexible(child: ItemSlide(_controller)),
         IconButton(
-          onPressed: () {
-            _controller.nextPage();
-          },
+          onPressed: () => _controller.nextPage(),
           icon: Icon(
             Icons.arrow_right,
           ),
