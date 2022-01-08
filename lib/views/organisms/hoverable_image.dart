@@ -21,7 +21,7 @@ class _HoverableImageState extends State<HoverableImage> {
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
-      onHover: (PointerEvent details) {
+      onEnter: (PointerEnterEvent details) {
         setState(() {
           image = widget.imageUrl2;
         });
