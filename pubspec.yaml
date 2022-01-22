@@ -30,6 +30,7 @@ dependencies:
   flutter_svg: ^0.23.0+1
   sentry_flutter: ^6.1.1
   carousel_slider: ^4.0.0
+  font_awesome_flutter:
 
 dev_dependencies:
   flutter_test:
