@@ -29,8 +29,8 @@ class TopPage extends StatelessWidget {
       ),
     );
 
-    return Center(
-      child: SingleChildScrollView(
+    return CustomScrollView(slivers: [
+      SliverToBoxAdapter(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -134,11 +134,22 @@ class TopPage extends StatelessWidget {
                     const Divider(),
               ),
             ),
-            HanaAppFooter(),
           ],
         ),
       ),
-    );
+      SliverFillRemaining(
+        hasScrollBody: false,
+        child: Container(
+          color: Colors.white,
+          child: Column(
+            children: [
+              Spacer(),
+              HanaAppFooter(),
+            ],
+          ),
+        ),
+      )
+    ]);
   }
 }
 
