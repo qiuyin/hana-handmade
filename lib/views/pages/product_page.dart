@@ -24,16 +24,17 @@ class ProductPage extends StatelessWidget {
       endIndent: 50,
     );
 
-    return SingleChildScrollView(
-      child: Container(
+    return CustomScrollView(slivers: [
+      SliverToBoxAdapter(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(
                   flex: 3,
                   child: Container(
-                    height: 100,
                     color: Colors.yellow,
                     child: Text("商品画像"),
                   ),
@@ -74,11 +75,23 @@ class ProductPage extends StatelessWidget {
                 ],
               ),
             ),
-            HanaAppFooter(),
           ],
         ),
       ),
-    );
+      SliverFillRemaining(
+        hasScrollBody: false,
+        child:
+        Container(
+          color: Colors.white,
+          child: Column(
+            children: [
+              Spacer(),
+              HanaAppFooter(),
+            ],
+          ),
+        ),
+      )
+    ]);
   }
 }
 
