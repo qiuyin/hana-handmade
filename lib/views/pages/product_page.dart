@@ -33,18 +33,71 @@ class ProductPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(
-                  flex: 3,
+                  flex: 2,
                   child: Container(
-                    color: Colors.yellow,
-                    child: Text("商品画像"),
+                    padding: EdgeInsets.all(10),
+                    child: Column(
+                      children: [
+                        Image.asset('images/item/1.jpg'),
+                        SizedBox(height: 10),
+                        Row(
+                          children: [
+                            Expanded(child: Image.asset('images/item/1.jpg')),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Expanded(child: Image.asset('images/item/2.jpg')),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Expanded(child: Image.asset('images/item/3.jpg')),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Expanded(child: Image.asset('images/item/4.jpg')),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Expanded(child: Image.asset('images/item/5.jpg')),
+                          ],
+                        ),
+                        SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Expanded(child: Image.asset('images/item/1.jpg')),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Expanded(child: Image.asset('images/item/2.jpg')),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Expanded(child: Image.asset('images/item/3.jpg')),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Expanded(child: Image.asset('images/item/4.jpg')),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Expanded(child: Image.asset('images/item/5.jpg')),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
                   flex: 1,
-                  child: Container(
-                    height: 100,
-                    color: Colors.greenAccent,
-                    child: Text("商品価格"),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      padding: EdgeInsets.all(30),
+                      height: 100,
+                      color: Colors.greenAccent,
+                      child: Text("商品価格"),
+                    ),
                   ),
                 ),
               ],
@@ -80,8 +133,7 @@ class ProductPage extends StatelessWidget {
       ),
       SliverFillRemaining(
         hasScrollBody: false,
-        child:
-        Container(
+        child: Container(
           color: Colors.white,
           child: Column(
             children: [
@@ -155,3 +207,11 @@ class RecommendItemsContainer extends StatelessWidget {
     );
   }
 }
+
+final item = [
+  'images/item/1.jpg',
+  'images/item/2.jpg',
+  'images/item/3.jpg',
+  'images/item/4.jpg',
+  'images/item/5.jpg',
+];
