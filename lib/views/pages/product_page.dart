@@ -33,18 +33,46 @@ class ProductPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(
-                  flex: 3,
+                  flex: 2,
                   child: Container(
-                    color: Colors.yellow,
-                    child: Text("商品画像"),
+                    padding: const EdgeInsets.all(10.0),
+                    child: Column(
+                      children: [
+                        Image.asset('images/item/1.jpg'),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        SizedBox(
+                          height: 430,
+                          width: double.infinity,
+                          child: GridView.count(
+                            padding: const EdgeInsets.all(10.0),
+                            mainAxisSpacing: 10,
+                            crossAxisSpacing: 10,
+                            crossAxisCount: 5,
+                            children: List.generate(
+                              8,
+                              (index) {
+                                return Image.asset(
+                                    'images/item/${(index + 1) % 5 + 1}.jpg');
+                              },
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(
                   flex: 1,
-                  child: Container(
-                    height: 100,
-                    color: Colors.greenAccent,
-                    child: Text("商品価格"),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      padding: EdgeInsets.all(30),
+                      height: 100,
+                      color: Colors.greenAccent,
+                      child: Text("商品価格"),
+                    ),
                   ),
                 ),
               ],
@@ -80,8 +108,7 @@ class ProductPage extends StatelessWidget {
       ),
       SliverFillRemaining(
         hasScrollBody: false,
-        child:
-        Container(
+        child: Container(
           color: Colors.white,
           child: Column(
             children: [
