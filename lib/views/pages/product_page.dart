@@ -35,54 +35,29 @@ class ProductPage extends StatelessWidget {
                 Expanded(
                   flex: 2,
                   child: Container(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10.0),
                     child: Column(
                       children: [
                         Image.asset('images/item/1.jpg'),
-                        SizedBox(height: 10),
-                        Row(
-                          children: [
-                            Expanded(child: Image.asset('images/item/1.jpg')),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Expanded(child: Image.asset('images/item/2.jpg')),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Expanded(child: Image.asset('images/item/3.jpg')),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Expanded(child: Image.asset('images/item/4.jpg')),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Expanded(child: Image.asset('images/item/5.jpg')),
-                          ],
+                        SizedBox(
+                          height: 10,
                         ),
-                        SizedBox(height: 10),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Expanded(child: Image.asset('images/item/1.jpg')),
-                            SizedBox(
-                              width: 10,
+                        SizedBox(
+                          height: 430,
+                          width: double.infinity,
+                          child: GridView.count(
+                            padding: const EdgeInsets.all(10.0),
+                            mainAxisSpacing: 10,
+                            crossAxisSpacing: 10,
+                            crossAxisCount: 5,
+                            children: List.generate(
+                              8,
+                              (index) {
+                                return Image.asset(
+                                    'images/item/${(index + 1) % 5 + 1}.jpg');
+                              },
                             ),
-                            Expanded(child: Image.asset('images/item/2.jpg')),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Expanded(child: Image.asset('images/item/3.jpg')),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Expanded(child: Image.asset('images/item/4.jpg')),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Expanded(child: Image.asset('images/item/5.jpg')),
-                          ],
+                          ),
                         ),
                       ],
                     ),
@@ -207,3 +182,11 @@ class RecommendItemsContainer extends StatelessWidget {
     );
   }
 }
+
+final abcditem = [
+  'images/item/1.jpg',
+  'images/item/2.jpg',
+  'images/item/3.jpg',
+  'images/item/4.jpg',
+  'images/item/5.jpg',
+];
