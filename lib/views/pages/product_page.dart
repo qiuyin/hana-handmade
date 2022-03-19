@@ -15,6 +15,13 @@ class ProductPage extends StatelessWidget {
       body: _body(context),
     );
   }
+  final item = [
+    'images/item/商品s1.jpg',
+    'images/item/商品s2.jpg',
+    'images/item/商品s3.jpg',
+    'images/item/商品s4.jpg',
+    'images/item/商品s5.jpg',
+  ];
 
   Widget _body(BuildContext context) {
     const divider = Divider(
@@ -33,10 +40,32 @@ class ProductPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Expanded(
-                  flex: 3,
+                  flex: 2,
                   child: Container(
-                    color: Colors.yellow,
-                    child: Text("商品画像"),
+                    padding: const EdgeInsets.all(10.0),
+                    child: Column(
+                      children: [
+                        Image.asset(
+                        'images/item_list/商品s1.jpg',
+                      ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        SizedBox(
+                          width: double.infinity,
+                          height: 430,
+                          child: GridView.count(
+                            crossAxisSpacing: 10,
+                            mainAxisSpacing: 10,
+                            padding: const EdgeInsets.all(10.0),
+                            crossAxisCount: 5,
+                            children: List.generate(8, (index) {
+                              return Image.asset('images/item_list/商品s${(index+1)%5+1}.jpg');
+                            },),
+                          ),
+                        ),
+                        ],
+                    ),
                   ),
                 ),
                 Expanded(
@@ -155,3 +184,5 @@ class RecommendItemsContainer extends StatelessWidget {
     );
   }
 }
+
+
