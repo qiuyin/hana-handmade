@@ -207,11 +207,3 @@ class RecommendItemsContainer extends StatelessWidget {
     );
   }
 }
-
-final item = [
-  'images/item/1.jpg',
-  'images/item/2.jpg',
-  'images/item/3.jpg',
-  'images/item/4.jpg',
-  'images/item/5.jpg',
-];
