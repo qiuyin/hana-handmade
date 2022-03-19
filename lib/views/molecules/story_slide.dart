@@ -7,9 +7,9 @@ class StorySlide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final imgList = [
-      'images/product_list/slide3.png',
-      'images/product_list/slide1.jpeg',
+      'images/product_list/slide1.webp',
       'images/product_list/slide2.webp',
+      'images/product_list/slide3.webp',
     ];
     final imageSliders = imgList
         .map((image) => Image.asset(
