@@ -6,6 +6,7 @@ import 'package:hana_handmade/common/colors.dart' as colors;
 import 'package:hana_handmade/views/organisms/hana_app_bar.dart';
 import 'package:hana_handmade/views/organisms/hana_app_footer.dart';
 import 'package:hana_handmade/views/organisms/hoverable_image.dart';
+import 'package:hana_handmade/views/organisms/product_image.dart';
 import 'package:routemaster/routemaster.dart';
 
 class ProductPage extends StatelessWidget {
@@ -32,37 +33,7 @@ class ProductPage extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Expanded(
-                  flex: 2,
-                  child: Container(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Column(
-                      children: [
-                        Image.asset('images/item/1.jpg'),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        SizedBox(
-                          height: 430,
-                          width: double.infinity,
-                          child: GridView.count(
-                            padding: const EdgeInsets.all(10.0),
-                            mainAxisSpacing: 10,
-                            crossAxisSpacing: 10,
-                            crossAxisCount: 5,
-                            children: List.generate(
-                              8,
-                              (index) {
-                                return Image.asset(
-                                    'images/item/${(index + 1) % 5 + 1}.jpg');
-                              },
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+                ProductImage(),
                 Expanded(
                   flex: 1,
                   child: Padding(
@@ -182,3 +153,8 @@ class RecommendItemsContainer extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
