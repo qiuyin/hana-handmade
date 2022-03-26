@@ -37,7 +37,7 @@ class _ProductImageState extends State<ProductImage> {
                     backgroundColor: Colors.white.withOpacity(0.4),
                     child: IconButton(
                       iconSize: 30,
-                      onPressed: imageIndex == 0? null: () => this.setState(() {
+                      onPressed: imageIndex == 0 ? null : () => this.setState(() {
                         imageIndex = imageIndex -1;
                       }),
 
@@ -54,8 +54,7 @@ class _ProductImageState extends State<ProductImage> {
                     backgroundColor: Colors.white.withOpacity(0.4),
                     child: IconButton(
                       iconSize: 30,
-                      onPressed: imageIndex == ItemList2.length -1
-                        ? null: () => this.setState(() {
+                      onPressed: imageIndex == ItemList2.length -1 ? null : () => this.setState(() {
                         imageIndex = imageIndex +1;
                       }),
 
@@ -78,7 +77,7 @@ class _ProductImageState extends State<ProductImage> {
                 crossAxisSpacing: 10,
                 crossAxisCount: 5,
                 children: List.generate(
-                  8,
+                  ItemList2.length,
                       (index) {
                     return Image.asset(
                         'images/item/${(index + 1) % 5 + 1}.jpg');
