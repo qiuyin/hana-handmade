@@ -154,29 +154,6 @@ class RecommendItemsContainer extends StatelessWidget {
   }
 }
 
-class MerchandiseItemsContainer extends StatelessWidget {
-  final CarouselController _controller = CarouselController();
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        IconButton(
-          onPressed: () => _controller.previousPage(),
-          icon: Icon(
-            Icons.arrow_back_ios,
-          ),
-        ),
-        Flexible(child: ItemSlide2(_controller)),
-        IconButton(
-          onPressed: () => _controller.nextPage(),
-          icon: Icon(
-            Icons.arrow_forward_ios,
-          ),
-        ),
-      ],
-    );
-  }
-}
 
 
 
