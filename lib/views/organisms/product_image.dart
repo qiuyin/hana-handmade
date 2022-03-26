@@ -10,7 +10,7 @@ class  ProductImage extends StatefulWidget {
 class _ProductImageState extends State<ProductImage> {
   int imageIndex = 0;
 
-  final ItemList2 = [
+  final itemList2 = [
     'images/item/1.jpg',
     'images/item/2.jpg',
     'images/item/3.jpg',
@@ -28,7 +28,7 @@ class _ProductImageState extends State<ProductImage> {
           children: [
             Stack(
               children: [
-                Image.asset(ItemList2[imageIndex]),
+                Image.asset(itemList2[imageIndex]),
                 Positioned(
                   bottom: 20,
                   left: 20,
@@ -54,7 +54,7 @@ class _ProductImageState extends State<ProductImage> {
                     backgroundColor: Colors.white.withOpacity(0.4),
                     child: IconButton(
                       iconSize: 30,
-                      onPressed: imageIndex == ItemList2.length -1 ? null : () => this.setState(() {
+                      onPressed: imageIndex == itemList2.length -1 ? null : () => this.setState(() {
                         imageIndex = imageIndex +1;
                       }),
 
@@ -77,7 +77,7 @@ class _ProductImageState extends State<ProductImage> {
                 crossAxisSpacing: 10,
                 crossAxisCount: 5,
                 children: List.generate(
-                  ItemList2.length,
+                  itemList2.length,
                       (index) {
                     return Image.asset(
                         'images/item/${(index + 1) % 5 + 1}.jpg');
