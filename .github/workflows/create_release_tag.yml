@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/github-script@v6
         env:
-          PRODUCTION_BRANCH: master
+          PRODUCTION_BRANCH: main
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
