@@ -18,6 +18,8 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 ```
 
 - flutter install
+
+https://github.com/qiuyin/hana-handmade/blob/main/.fvm/fvm_config.json に指定したflutter versionをinstall
 ```shell script
 fvm install
 ```
