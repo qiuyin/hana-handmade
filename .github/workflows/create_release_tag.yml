@@ -23,7 +23,7 @@ jobs:
               + String(merged_at.getHours()).padStart(2, '0')
               + String(merged_at.getMinutes()).padStart(2, '0')
               + String(merged_at.getSeconds()).padStart(2, '0');
-            github.repos.createRelease({
+            github.rest.createRelease({
               ...context.repo,
               tag_name: tag_name,
               name: tag_name,
