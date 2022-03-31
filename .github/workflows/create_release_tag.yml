@@ -23,6 +23,11 @@ jobs:
               + String(merged_at.getHours()).padStart(2, '0')
               + String(merged_at.getMinutes()).padStart(2, '0')
               + String(merged_at.getSeconds()).padStart(2, '0');
+            console.log("111");
+            console.log(pr);
+            console.log("222");
+            console.log(context.repo);
+            console.log("333");
             github.rest.repos.createRelease({
               ...context.repo,
               tag_name: tag_name,
