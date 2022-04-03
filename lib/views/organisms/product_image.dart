@@ -14,6 +14,11 @@ class _ProductImageState extends State<ProductImage> {
     'images/item/3.jpg',
     'images/item/4.jpg',
     'images/item/5.jpg',
+    'images/item/6.jpg',
+    'images/item/7.jpg',
+    'images/item/8.jpg',
+    'images/item/9.jpg',
+    'images/item/10.jpg',
   ];
 
   @override
@@ -86,7 +91,7 @@ class _ProductImageState extends State<ProductImage> {
                       imageIndex = index;
                     });
                   },
-                  child: Image.asset('images/item/${(index + 1) % 5 + 1}.jpg'),
+                  child: Image.asset(itemList2[index]),
                 );
               }),
             ),
