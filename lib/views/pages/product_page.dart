@@ -7,6 +7,7 @@ import 'package:hana_handmade/views/organisms/hana_app_bar.dart';
 import 'package:hana_handmade/views/organisms/hana_app_footer.dart';
 import 'package:hana_handmade/views/organisms/hoverable_image.dart';
 import 'package:hana_handmade/views/organisms/product_image.dart';
+import 'package:hana_handmade/views/organisms/product_info.dart';
 import 'package:routemaster/routemaster.dart';
 
 class ProductPage extends StatelessWidget {
@@ -38,12 +39,7 @@ class ProductPage extends StatelessWidget {
                   flex: 1,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      padding: EdgeInsets.all(30),
-                      height: 100,
-                      color: Colors.greenAccent,
-                      child: Text("商品価格"),
-                    ),
+                    child: ProductInfo(),
                   ),
                 ),
               ],
@@ -153,8 +149,3 @@ class RecommendItemsContainer extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
