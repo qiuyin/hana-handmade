@@ -47,7 +47,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                 ),
               ),
               Text(
-                '※複数購入の場合、総送料はカードで再計算し表示される',
+                '※複数購入の場合、総送料はカートで再計算し表示される',
                 style: TextStyle(
                   fontSize: 10,
                   color: Colors.black54,
@@ -100,7 +100,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                 height: 30,
               ),
               Text(
-                longString1,
+                productspecifications,
                 strutStyle: StrutStyle(height: 1.3),
                 style: TextStyle(
                   fontSize: 13,
@@ -115,7 +115,7 @@ class _ProductDetailsState extends State<ProductDetails> {
   }
 }
 
-final longString1 = '''
+final productspecifications = '''
 
 商品仕様
 ・Diameter: 3.1 inches/8 cm
