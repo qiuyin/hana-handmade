@@ -86,11 +86,7 @@ class _ProductInfoState extends State<ProductInfo> {
                 )),
               ),
               SizedBox(width: 30),
-              Image.asset(
-                'images/hart.png',
-                width: 30,
-                height: 30,
-              ),
+              Icon(Icons.favorite_border),
             ],
           ),
           SizedBox(height: 30),
