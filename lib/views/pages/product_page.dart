@@ -39,15 +39,22 @@ class ProductPage extends StatelessWidget {
               ],
             ),
             Container(
+              padding: EdgeInsets.all(50),
               width: double.infinity,
-
-              child: Text(productIntroduction),
-
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SelectableText(
+                    "商品紹介：",
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  ),
+                  SelectableText(productIntroduction),
+                ],
+              ),
             ),
             divider,
             Container(
               width: double.infinity,
-
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -145,35 +152,19 @@ class RecommendItemsContainer extends StatelessWidget {
   }
 }
 
-
-
-
-
-
-
-
-
-
-final productIntroduction
-= '''
+final productIntroduction = '''
 
 
 ハンドメイドのサニタリーケースです。
 イヤホン、リップ、ヘアアクセサリー等小物入れにもいいです。
 
-
-
 〈サイズ〉
 縦  約11cm
 横  約12cm
 
-
 <素材>
 表：リバティ
 裏：キルティング
-
-
-
 
 以下の内容をご確認の上、ご購入お願いします。
 ーーーーーーーーーーーーーーーーーーーーーー
