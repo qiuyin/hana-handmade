@@ -11,7 +11,7 @@ class ColorButton extends StatelessWidget {
       width: 50,
       height: 50,
       child: Material(
-        color: Colors.white,
+
         child: Center(
           child: Ink(
             decoration: ShapeDecoration(
@@ -36,3 +36,6 @@ class ColorButton extends StatelessWidget {
     );
   }
 }
+
+
+

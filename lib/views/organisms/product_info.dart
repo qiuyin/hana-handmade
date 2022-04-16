@@ -4,22 +4,22 @@ import 'package:flutter/rendering.dart';
 import 'package:hana_handmade/common/colors.dart' as colors;
 import 'package:hana_handmade/views/organisms/product_info_colorbutton.dart';
 
-class ProductDetails extends StatefulWidget {
+class ProductInfo extends StatefulWidget {
   @override
-  _ProductDetailsState createState() => _ProductDetailsState();
+  _ProductInfoState createState() => _ProductInfoState();
 }
 
-class _ProductDetailsState extends State<ProductDetails> {
+class _ProductInfoState extends State<ProductInfo> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
       flex: 1,
       child: Padding(
+
         padding: const EdgeInsets.all(8.0),
         child: Container(
           padding: EdgeInsets.all(30),
           height: 800,
-          color: Colors.white,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -27,10 +27,10 @@ class _ProductDetailsState extends State<ProductDetails> {
               Text(
                 'Vanessa Acrylic',
                 style: TextStyle(
-                  fontSize: 40,
-                  color: Colors.black,
+                  fontSize: 40
                 ),
               ),
+              SizedBox(height: 10),
 
               Text(
                 '¥2,000(税込)',
@@ -39,6 +39,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                   color: Colors.black54,
                 ),
               ),
+              SizedBox(height: 10),
               Text(
                 '単品送料: ¥200',
                 style: TextStyle(
@@ -46,6 +47,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                   color: Colors.black54,
                 ),
               ),
+              SizedBox(height: 8),
               Text(
                 '※複数購入の場合、総送料はカートで再計算し表示される',
                 style: TextStyle(
@@ -53,7 +55,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                   color: Colors.black54,
                 ),
               ),
-              SizedBox(height: 30,),
+              SizedBox(height: 50),
+
               Text(
                 'COLOR',
                 style: TextStyle(
@@ -61,7 +64,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                   color: Colors.black,
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 10),
               Row(
                 children: [
                   ColorButton(itemColor: Colors.red,),
@@ -76,35 +79,36 @@ class _ProductDetailsState extends State<ProductDetails> {
                   color: Colors.black,
                 ),
               ),
+              SizedBox(height: 30),
               SizedBox(
                 height: 30,
               ),
               Row(
                 children: [
                   Container(
-                    width: 200,
-                    height: 30,
+                    width: 300,
+                    height: 50,
                     decoration: BoxDecoration(
                       color: colors.hanaPink,
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Center(child: Text('カートに入れる')),
+                    child: Center(child: Text('カートに入れる',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),)),
                   ),
                   SizedBox(
-                    width: 30,
+                    width: 30
                   ),
-                  Icon(Icons.favorite_border),
+                  Icon(Icons.favorite_border,size: 35,),
                 ],
               ),
               SizedBox(
-                height: 30,
+                height: 40
               ),
+              Text("商品仕様",style: TextStyle(fontSize: 15),),
               Text(
-                productspecifications,
+                productSpecifications,
                 strutStyle: StrutStyle(height: 1.3),
                 style: TextStyle(
-                  fontSize: 13,
-                  color: Colors.black,
+                  fontSize: 13
                 ),
               ),
             ],
@@ -115,9 +119,8 @@ class _ProductDetailsState extends State<ProductDetails> {
   }
 }
 
-final productspecifications = '''
+final productSpecifications = '''
 
-商品仕様
 ・Diameter: 3.1 inches/8 cm
 ・Monogram canvas
 ・Gold-cold hardware
