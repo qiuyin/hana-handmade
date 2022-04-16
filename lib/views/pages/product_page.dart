@@ -41,7 +41,7 @@ class ProductPage extends StatelessWidget {
             Container(
               width: double.infinity,
 
-              child: Text(roductpIProduct),
+              child: Text(productIntroduction),
 
             ),
             divider,
@@ -154,7 +154,8 @@ class RecommendItemsContainer extends StatelessWidget {
 
 
 
-final roductpIProduct= '''
+final productIntroduction
+= '''
 
 
 ハンドメイドのサニタリーケースです。
