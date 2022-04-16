@@ -95,7 +95,7 @@ class _ProductInfoState extends State<ProductInfo> {
             style: TextStyle(fontSize: 15),
           ),
           Text(
-            productspecifications,
+            productSpecifications,
             style: TextStyle(fontSize: 10),
           ),
         ],
@@ -104,7 +104,7 @@ class _ProductInfoState extends State<ProductInfo> {
   }
 }
 
-final productspecifications = '''
+final productSpecifications = '''
 
 ・原材料:水 (鉱水)
 ・カロリー:【100mlあたり】0kcal
