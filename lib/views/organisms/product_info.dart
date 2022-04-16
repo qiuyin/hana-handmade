@@ -55,7 +55,12 @@ class _ProductInfoState extends State<ProductInfo> {
             style: TextStyle(fontSize: 15),
           ),
           SizedBox(height: 10),
-          ColorBouutn(),
+          Row(
+            children: [
+              ColorButton(itemColor: Colors.indigo),
+              ColorButton(itemColor: Colors.red),
+            ],
+          ),
           SizedBox(height: 10),
           Text(
             "在庫数:5",
