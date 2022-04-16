@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 class HoverableImage extends StatefulWidget {
   final String imageUrl1;
   final String imageUrl2;
-  const HoverableImage({this.imageUrl1, this.imageUrl2});
+  const HoverableImage({required this.imageUrl1, required this.imageUrl2});
 
   @override
   _HoverableImageState createState() => _HoverableImageState();
 }
 
 class _HoverableImageState extends State<HoverableImage> {
-  String image;
+  late String image;
 
   @override
   void initState() {

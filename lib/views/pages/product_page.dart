@@ -6,6 +6,7 @@ import 'package:hana_handmade/common/colors.dart' as colors;
 import 'package:hana_handmade/views/organisms/hana_app_bar.dart';
 import 'package:hana_handmade/views/organisms/hana_app_footer.dart';
 import 'package:hana_handmade/views/organisms/hoverable_image.dart';
+import 'package:hana_handmade/views/organisms/product_info.dart';
 import 'package:hana_handmade/views/organisms/product_image.dart';
 import 'package:routemaster/routemaster.dart';
 
@@ -34,18 +35,7 @@ class ProductPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ProductImage(),
-                Expanded(
-                  flex: 1,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      padding: EdgeInsets.all(30),
-                      height: 100,
-                      color: Colors.greenAccent,
-                      child: Text("商品価格"),
-                    ),
-                  ),
-                ),
+                ProductDetails(),
               ],
             ),
             Container(
