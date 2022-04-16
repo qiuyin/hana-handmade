@@ -35,18 +35,26 @@ class ProductPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ProductImage(),
-                ProductDetails(),
+                ProductInfo(),
               ],
             ),
             Container(
+              padding: EdgeInsets.all(50),
               width: double.infinity,
-              color: Colors.blue,
-              child: Text("商品説明"),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SelectableText(
+                    "商品紹介：",
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  ),
+                  SelectableText(productIntroduction),
+                ],
+              ),
             ),
             divider,
             Container(
               width: double.infinity,
-              color: Colors.white,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -144,7 +152,54 @@ class RecommendItemsContainer extends StatelessWidget {
   }
 }
 
+final productIntroduction = '''
+
+
+ハンドメイドのサニタリーケースです。
+イヤホン、リップ、ヘアアクセサリー等小物入れにもいいです。
+
+〈サイズ〉
+縦  約11cm
+横  約12cm
+
+<素材>
+表：リバティ
+裏：キルティング
+
+以下の内容をご確認の上、ご購入お願いします。
+ーーーーーーーーーーーーーーーーーーーーーー
+★写真の品が届きます。
+
+★画像は撮影環境でイメージが違って見える場合がございますのでご了承の上でご購入下さいませ。
+
+★素人ハンドメイドですので、既製品の様に完璧ではありません。
+家庭用ミシンで製作しております。
+丁寧にお作りしていますが、多少のずれ、縫製の甘さなどあるかもしれません。
+ご理解いただける方のみご購入お願いしますm(_ _)m
+
+
+★チャコペンの痕が残っていることもあるかもしれませんが、
+消えるチャコペンを使っております。
+
+
+★ハンドメイドということを御理解の上、既製品のような完璧を求める方、神経質な方のご購入はご遠慮下さい!!!
+
+★出品しているものは、急に削除・再出品することがございます。いいねしてくださった方には大変申し訳ありませんが、ご理解の程宜しくお願い致します。
+
+★出品中のハンドメイド品に関しまして、1回の注文につき、2点以上ご購入の場合、
+2点目から「1点追加毎に100円」お値引き致します。
+コメントいただければ、専用ページにてご案内いたします。
+
+★他にも多数出品しておりますので、ぜひ一度ご覧ください^^
+#0909❤ワクワク
+
+ 
+
+#サニタリーケース
+#ケース
+#小物入れ
+#リバティ小物
 
 
 
-
+''';
