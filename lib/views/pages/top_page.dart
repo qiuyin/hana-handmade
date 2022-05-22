@@ -172,8 +172,18 @@ class ItemSlide extends StatelessWidget {
               padding: const EdgeInsets.all(13.0),
               child: GestureDetector(
                 onTap: () => Routemaster.of(context).push('/product'),
-                child: HoverableImage(
-                    imageUrl1: image, imageUrl2: 'images/newitem_list/2.jpg'),
+                child: Stack(
+                  children: [
+                  HoverableImage(
+                      imageUrl1: image, imageUrl2: 'images/newitem_list/2.jpg'),
+                    Positioned(
+                      top: 20,
+                      right: 20,
+                      child: Icon(
+                          Icons.favorite_border),
+                    ),
+                  ],
+                ),
               ),
             ))
         .toList();
