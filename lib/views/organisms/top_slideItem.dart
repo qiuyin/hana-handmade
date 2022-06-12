@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:hana_handmade/views/atoms/circle_button.dart';
 import 'package:routemaster/routemaster.dart';
 
-class Top_SlideItem extends StatefulWidget {
+class TopSlideItem extends StatefulWidget {
   final imageList;
 
-  const Top_SlideItem({Key? key, required this.imageList}) : super(key: key);
+  const TopSlideItem({Key? key, required this.imageList}) : super(key: key);
   @override
-  _Top_SlideItemState createState() => _Top_SlideItemState();
+  _TopSlideItemState createState() => _TopSlideItemState();
 }
 
-class _Top_SlideItemState extends State<Top_SlideItem> {
+class _TopSlideItemState extends State<TopSlideItem> {
   int imageIndex = 0;
 
   @override

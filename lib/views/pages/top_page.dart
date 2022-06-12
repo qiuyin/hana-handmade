@@ -218,7 +218,7 @@ class _ItemSlideState extends State<ItemSlide> {
     ];
 
     final itemSliders =
-        itemList.map((item) => Top_SlideItem(imageList: item)).toList();
+        itemList.map((item) => TopSlideItem(imageList: item)).toList();
     return SizedBox(
       height: 400,
       child: CarouselSlider(
