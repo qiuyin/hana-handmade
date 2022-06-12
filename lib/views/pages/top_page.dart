@@ -8,8 +8,7 @@ import 'package:hana_handmade/common/colors.dart';
 import 'package:hana_handmade/views/molecules/story_slide.dart';
 import 'package:hana_handmade/views/organisms/hana_app_bar.dart';
 import 'package:hana_handmade/views/organisms/hana_app_footer.dart';
-import 'package:hana_handmade/views/organisms/hoverable_image.dart';
-import 'package:routemaster/routemaster.dart';
+import 'package:hana_handmade/views/organisms/top_slideItem.dart';
 
 class TopPage extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -153,45 +152,78 @@ class TopPage extends StatelessWidget {
   }
 }
 
-class ItemSlide extends StatelessWidget {
+class ItemSlide extends StatefulWidget {
   ItemSlide(this._controller);
 
   final CarouselController _controller;
 
   @override
+  State<ItemSlide> createState() => _ItemSlideState();
+}
+
+class _ItemSlideState extends State<ItemSlide> {
+  int imageIndex = 0;
+
+  @override
   Widget build(BuildContext context) {
     final itemList = [
-      'images/newitem_list/1.jpg',
-      'images/newitem_list/2.jpg',
-      'images/newitem_list/3.jpg',
-      'images/newitem_list/4.jpg',
-      'images/newitem_list/5.jpg',
+      [
+        'images/item/1.jpg',
+        'images/item/2.jpg',
+        'images/item/3.jpg',
+        'images/item/4.jpg',
+        'images/item/5.jpg',
+        'images/item/6.jpg',
+        'images/item/7.jpg',
+        'images/item/8.jpg',
+        'images/item/9.jpg',
+        'images/item/10.jpg',
+      ],
+      [
+        'images/item/3.jpg',
+        'images/item/4.jpg',
+        'images/item/5.jpg',
+        'images/item/2.jpg',
+        'images/item/6.jpg',
+        'images/item/7.jpg',
+        'images/item/8.jpg',
+        'images/item/1.jpg',
+        'images/item/9.jpg',
+        'images/item/10.jpg',
+      ],
+      [
+        'images/item/4.jpg',
+        'images/item/5.jpg',
+        'images/item/6.jpg',
+        'images/item/7.jpg',
+        'images/item/8.jpg',
+        'images/item/9.jpg',
+        'images/item/10.jpg',
+        'images/item/1.jpg',
+        'images/item/2.jpg',
+        'images/item/3.jpg',
+      ],
+      [
+        'images/item/9.jpg',
+        'images/item/10.jpg',
+        'images/item/1.jpg',
+        'images/item/2.jpg',
+        'images/item/3.jpg',
+        'images/item/4.jpg',
+        'images/item/5.jpg',
+        'images/item/6.jpg',
+        'images/item/7.jpg',
+        'images/item/8.jpg',
+      ],
     ];
-    final itemSliders = itemList
-        .map((image) => Padding(
-              padding: const EdgeInsets.all(13.0),
-              child: GestureDetector(
-                onTap: () => Routemaster.of(context).push('/product'),
-                child: Stack(
-                  children: [
-                  HoverableImage(
-                      imageUrl1: image, imageUrl2: 'images/newitem_list/2.jpg'),
-                    Positioned(
-                      top: 20,
-                      right: 20,
-                      child: Icon(
-                          Icons.favorite_border),
-                    ),
-                  ],
-                ),
-              ),
-            ))
-        .toList();
+
+    final itemSliders =
+        itemList.map((item) => TopSlideItem(imageList: item)).toList();
     return SizedBox(
       height: 400,
       child: CarouselSlider(
         items: itemSliders,
-        carouselController: _controller,
+        carouselController: widget._controller,
         options: CarouselOptions(
           height: 400,
           autoPlay: false,
@@ -203,8 +235,14 @@ class ItemSlide extends StatelessWidget {
   }
 }
 
-class NewItemsContainer extends StatelessWidget {
+class NewItemsContainer extends StatefulWidget {
+  @override
+  State<NewItemsContainer> createState() => _NewItemsContainerState();
+}
+
+class _NewItemsContainerState extends State<NewItemsContainer> {
   final CarouselController _controller = CarouselController();
+
   @override
   Widget build(BuildContext context) {
     return Row(
