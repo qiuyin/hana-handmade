@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hana_handmade/views/atoms/circle_button.dart';
 import 'package:routemaster/routemaster.dart';
 
 class Top_SlideItem extends StatefulWidget {
@@ -31,41 +32,29 @@ class _Top_SlideItemState extends State<Top_SlideItem> {
             ),
             Positioned(
               left: 0,
-              child: CircleAvatar(
-                radius: 40,
-                backgroundColor: Colors.white.withOpacity(0.2),
-                child: IconButton(
-                  iconSize: 30,
-                  onPressed: imageIndex == 0
-                      ? () {}
-                      : () => setState(() {
-                            imageIndex = imageIndex - 1;
-                          }),
-                  icon: Icon(
-                    Icons.arrow_back_ios,
-                    color: Colors.grey.withOpacity(0.5),
-                  ),
-                ),
-              ),
+              child: CircleButton(onTap: imageIndex == 0
+                  ? () {}
+                  : () => setState(
+                    () {
+                  imageIndex = imageIndex - 1;
+                },
+              ), child: Padding(
+                padding: const EdgeInsets.only(left: 8),
+                child: Icon(
+                Icons.arrow_back_ios,
+                color: Colors.grey.withOpacity(0.3),
             ),
+              ),),),
             Positioned(
               right: 0,
-              child: CircleAvatar(
-                radius: 40,
-                backgroundColor: Colors.white.withOpacity(0.2),
-                child: IconButton(
-                  iconSize: 30,
-                  onPressed: imageIndex == widget.imageList.length - 1
-                      ? () {}
-                      : () => setState(() {
-                            imageIndex = imageIndex + 1;
-                          }),
-                  icon: Icon(
-                    Icons.arrow_forward_ios,
-                    color: Colors.grey.withOpacity(0.2),
-                  ),
-                ),
-              ),
+              child:  CircleButton(onTap: imageIndex == widget.imageList.length - 1
+                  ? () {}
+                  : () => setState(() {
+                imageIndex = imageIndex + 1;
+              }), child: Icon(
+                Icons.arrow_forward_ios,
+                color: Colors.grey.withOpacity(0.3),
+              ),),
             ),
           ],
         ),
